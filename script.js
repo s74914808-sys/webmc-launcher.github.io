@@ -1,3 +1,10 @@
+function iniframe() {
+    return window.self !== window.top;
+}
+if(iniframe()==true){location.href='/iframe.html'};
+const appVersion = '1.5';
+const passwd = localStorage.getItem('passwd');
+if(passwd){if(!sessionStorage.getItem('loggedIn')){while(true){{if(prompt('Please log in!')==localStorage.getItem('passwd')){sessionStorage.setItem('loggedIn', 'true');break}else{alert('Incorrect password')}}}}};
 window.addEventListener('load', function() {
     const loader = document.querySelector('.loader');
     loader.classList.add('loader--hidden');
@@ -7,6 +14,7 @@ window.addEventListener('load', function() {
 });
 window.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('contextmenu', event => event.preventDefault());
+    document.querySelector('.dev-info > span').innerHTML = (document.querySelector('.dev-info > span').innerHTML.replace('${appVersion}', appVersion));
     window.gameFrame = document.querySelector('.game-frame');
     window.gameFrame.addEventListener('contextmenu', event => event.preventDefault());
 });

@@ -123,7 +123,7 @@ input, button {
     z-index: 1;
 }
 
-.version-content a {
+.version-content > a {
     color: white;
     padding: 12px 16px;
     text-decoration: none;
@@ -131,7 +131,7 @@ input, button {
     cursor: pointer;
 }
 
-.version-content a:hover {
+.version-content > a:hover {
     background-color: #555;
 }
 
@@ -230,4 +230,36 @@ input, button {
 
 .game-frame .active {
     height:100%;
+}
+
+.key-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.key-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.key-item {
+    max-width: 25%;
+    min-width: 25%;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.key-item .vanilla {
+    background-color: #065800;
+}
+
+.key-item .modded {
+    background-color: #c29f01;
+}
+
+.key-item .hacked {
+    background-color: #790101;
 }
