@@ -2,7 +2,7 @@ function iniframe() {
     return window.self !== window.top;
 }
 if(iniframe()==true){location.href='/iframe.html'};
-const appVersion = '1.5';
+const appVersion = '1.6';
 const passwd = localStorage.getItem('passwd');
 if(passwd){if(!sessionStorage.getItem('loggedIn')){while(true){{if(prompt('Please log in!')==localStorage.getItem('passwd')){sessionStorage.setItem('loggedIn', 'true');break}else{alert('Incorrect password')}}}}};
 window.addEventListener('load', function() {

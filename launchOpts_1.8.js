@@ -5,15 +5,39 @@ window.eaglercraftXOpts = {
     servers: [
         {
             addr: "wss://eagler.eaglesmp.org",
-            name: "EagleSMP #1"
+            name: "✫ EagleSMP #1"
         },
         {
             addr: "wss://eagler.colbster937.dev",
-            name: "EagleSMP #2"
+            name: "✫ EagleSMP #2"
         },
         {
             addr: "wss://eagler-backrooms.colbster937.dev",
-            name: "The Backrooms"
+            name: "✫ The Backrooms"
+        },
+        {
+            addr: "wss://mc.arch.lol",
+            name: "ArchMC"
+        },
+        {
+            addr: "wss://x.mess.eu.org",
+            name: "MessCraft"
+        },
+        {
+            addr: "wss://sus.shhnowisnottheti.me",
+            name: "CreaCraft"
+        },
+        {
+            addr: "wss://eagler.psr.tf",
+            name: "iEvade"
+        },
+        {
+            addr: "wss://reading-gs.q13x.com",
+            name: "q13x Anarchy"
+        },
+        {
+            addr: "wss://play.cheeseburgersmp.lol/",
+            name: "CheeseburgerSMP"
         }
     ],
     "relays": [
