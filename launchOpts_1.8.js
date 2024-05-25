@@ -43,11 +43,6 @@ window.eaglercraftXOpts = {
             name: "q13x Anarchy", 
             hideAddress: true
         },
-        {
-            addr: "wss://play.cheeseburgersmp.lol/",
-            name: "CheeseburgerSMP", 
-            hideAddress: true
-        }
     ],
     "relays": [
         {

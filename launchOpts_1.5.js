@@ -38,17 +38,8 @@ window.eaglercraftOpts = {
     ],
     mainMenu: { 
         splashes: [
-            "Darviglet!",
-            "You Eagler!",
-            "Yeeeeeee!",
-            "yeee",
-            "EEEEEEEEE!",
-            "You Darvig!",
-            "You Vigg!",
-            ":>",
-            "|>",
-            "You Yumpster!"
+            " "
         ], 
-        eaglerLogo: false 
+        eaglerLogo: false
     }
 };
