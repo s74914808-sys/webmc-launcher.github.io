@@ -76,12 +76,12 @@ input, button {
     justify-content: flex-start;
     position: relative;
 }
-
+.game-frame-load,
 .game-frame {
     position: absolute;
     border: none;
     width: 100%;
-    height: calc(100% - 7.5%);
+    height: calc(100% - 6.5%);
 }
 
 .version-chooser {
@@ -219,7 +219,7 @@ input, button {
     cursor: pointer;
     z-index: 999;
     min-width: 40px;
-    min-height: auto;
+    min-height: 40px;
     transition: ease-in-out 0.2s;
     animation: fade 2s linear;
 }

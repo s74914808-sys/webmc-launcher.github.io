@@ -2,14 +2,17 @@ function iniframe() {
     return window.self !== window.top;
 }
 if(iniframe()==true){location.href='/iframe.html'};
-const appVersion = '1.6';
+const appVersion = '1.7';
 const passwd = localStorage.getItem('passwd');
 if(passwd){if(!sessionStorage.getItem('loggedIn')){while(true){{if(prompt('Please log in!')==localStorage.getItem('passwd')){sessionStorage.setItem('loggedIn', 'true');break}else{alert('Incorrect password')}}}}};
 window.addEventListener('load', function() {
     const loader = document.querySelector('.loader');
     loader.classList.add('loader--hidden');
     loader.addEventListener('transitionend', function() {
-        document.body.removeChild(loader);
+        loader.remove();
+    });
+    window.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('game-frame-load').srcdoc = window.loaderHTML;
     });
 });
 window.addEventListener('DOMContentLoaded', function() {
@@ -19,23 +22,24 @@ window.addEventListener('DOMContentLoaded', function() {
     window.gameFrame.addEventListener('contextmenu', event => event.preventDefault());
 });
 function changeVersion(version) {
-    var friendlyVersion = version.replace('latest', 'Latest Release (1.8.8)').replace('classic', 'Classic').replace('ms-Classic', 'Classic (Microsoft Recreation)').replace('beta-1.3', 'Beta 1.3').replace('alpha-1.2.6', 'Alpha 1.2.6').replace('dragonx-client', 'DragonX Client').replace('resent', 'Resent Client').replace('optifine', 'Shadow Client').replace('flame', 'Flame Client');
-    document.querySelector('.version-btn').innerText = friendlyVersion;
-    if(localStorage.getItem('cloakTab')!=='true'){document.title='WebMC Launcher | '+friendlyVersion};
-    window.currentVersion = version.replace('latest', '1.8.8').replace('Classic', 'classic').replaceAll(' ', '-').replace('Indev', 'indev').replace('Paper', 'paper');
-}
-function gameFrameLoad(iframe) {
-    iframe.contentWindow.focus();
+    window.friendlyVersion = version.replace('classic', 'Classic').replace('ms-Classic', 'Classic (Microsoft Recreation)').replace('beta-1.7.3', 'Beta 1.7.3').replace('beta-1.3', 'Beta 1.3').replace('alpha-1.2.6', 'Alpha 1.2.6').replace('dragonx-client', 'DragonX Client').replace('resent', 'Resent Client').replace('optifine', 'Shadow Client').replace('flame', 'Flame Client');
+    document.querySelector('.version-btn').innerText = window.friendlyVersion;
+    window.currentVersion = version.toString().toLowerCase().replaceAll(' ', '-');
 }
 function playGame() {
     const playBtn = document.querySelector('.play-btn');
     playBtn.classList.add('play-btn-running');
     playBtn.innerHTML = 'STOP';
     playBtn.setAttribute('onclick', 'stopGame()');
+    document.querySelector('.game-frame-load').srcdoc=(window.loaderHTML);
     if (!window.currentVersion || window.currentVersion == null) {
-        changeVersion('latest');
+        const defaultVersion = '1.8.8';
+        const defaultVersion_fri = '1.8.8';
+        changeVersion(defaultVersion);
+        window.friendlyVersion = defaultVersion_fri;
     }
-    document.querySelector('.game-frame').src = `/mc/${window.currentVersion}`;
+    if(localStorage.getItem('cloakTab')!=='true'){document.title='WebMC Launcher | '+window.friendlyVersion};
+    document.querySelector('.game-frame').src = `/mc/${window.currentVersion}/index.html`;
     document.getElementById('fullscreen-btn').style.visibility = 'visible';
     document.getElementById('aboutBlank-btn').style.visibility = 'visible';
     setTimeout(function() {
@@ -47,6 +51,7 @@ function stopGame() {
     window.gameFrame.src = "about:blank";
     window.gameFrame.onload = function() {
         if (window.gameFrame.contentWindow.location.href.includes("about:blank")) {
+            document.querySelector('.game-frame-load').srcdoc=null;
             if(localStorage.getItem('cloakTab')!=='true'){document.title='WebMC Launcher'}
             const playBtn = document.querySelector('.play-btn');
             playBtn.classList.remove('play-btn-running');
@@ -71,7 +76,7 @@ function openAboutBlankWindow(version) {
     newAboutBlankWindow.document.body.style.margin = '0';
     newAboutBlankWindow.document.body.style.height = '100vh';
     newAboutBlankWindow.document.title = 'about:blank';
-    iframe.src = `/mc/${version}`;
+    iframe.src = `/mc/${version}/index.html`;
     iframe.style.border = 'none';
     iframe.border = '0';
     iframe.style.left = 0;
@@ -127,7 +132,3 @@ if (isMobile()) {
     alert('Please visit this page from a proper desktop/laptop computer!');
     location.href='about:blank';
 }
-window.addEventListener('beforeunload', function (e) {
-  e.preventDefault();
-  e.returnValue = '';
-});
