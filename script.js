@@ -42,9 +42,11 @@ function playGame() {
     document.querySelector('.game-frame').src = `/mc/${window.currentVersion}/index.html`;
     document.getElementById('fullscreen-btn').style.visibility = 'visible';
     document.getElementById('aboutBlank-btn').style.visibility = 'visible';
+    document.getElementById('reload-btn').style.visibility = 'visible';
     setTimeout(function() {
         document.getElementById('fullscreen-btn').style.opacity = '1';
         document.getElementById('aboutBlank-btn').style.opacity = '1';
+        document.getElementById('reload-btn').style.opacity = '1';
         document.querySelector('.game-frame').contentWindow.focus();
     }, 100);
 }
@@ -60,12 +62,15 @@ function stopGame() {
             playBtn.setAttribute('onclick', 'playGame()');
             const fullscreenBtn = document.getElementById('fullscreen-btn');
             const aboutBlankBtn = document.getElementById('aboutBlank-btn');
+            const reloadBtn = document.getElementById('reload-btn');
             fullscreenBtn.style.opacity = '0';
             aboutBlankBtn.style.opacity = '0';
+            reloadBtn.style.opacity = '0';
             setTimeout(function() {
                 if (window.gameFrame.contentWindow.location.href.includes(location.origin + "/blank.html")) {
                     fullscreenBtn.style.visibility = 'hidden';
                     aboutBlankBtn.style.visibility = 'hidden';
+                    reloadBtn.style.visibility = 'hidden';
                 }
             }, 2000);
         }
