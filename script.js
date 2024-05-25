@@ -45,6 +45,7 @@ function playGame() {
     setTimeout(function() {
         document.getElementById('fullscreen-btn').style.opacity = '1';
         document.getElementById('aboutBlank-btn').style.opacity = '1';
+        document.querySelector('.game-frame').contentWindow.focus();
     }, 100);
 }
 function stopGame() {
