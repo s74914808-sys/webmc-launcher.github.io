@@ -51,7 +51,7 @@ function stopGame() {
     window.gameFrame.src = "about:blank";
     window.gameFrame.onload = function() {
         if (window.gameFrame.contentWindow.location.href.includes("about:blank")) {
-            document.querySelector('.game-frame-load').srcdoc=null;
+            document.querySelector('.game-frame-load').removeAttribute('srcdoc');
             if(localStorage.getItem('cloakTab')!=='true'){document.title='WebMC Launcher'}
             const playBtn = document.querySelector('.play-btn');
             playBtn.classList.remove('play-btn-running');
