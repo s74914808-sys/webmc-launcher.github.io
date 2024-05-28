@@ -1,51 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>WebMC Launcher</title>
-    <link rel="icon" href="/favicon.webp">
-    <link rel="stylesheet" href="/style.css">
-    <script defer src="/master.js"></script>
-    <script src="/fontawesome.js" crossorigin="anonymous"></script>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#009933">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Moved</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <noscript>You need to enable javascript to run this app</noscript>
-    <div class="loader"></div>
-    <div class="main-content">
-        <main>
-            <button class="mc-btn" id="fullscreen-btn" style="right:7px;bottom:calc(7.5% + 7px);visibility:hidden;opacity:0;" onclick="toggleFullscreen()"><i class="fa-solid fa-expand"></i></button>
-            <button class="mc-btn" id="aboutBlank-btn" style="right:54px;bottom:calc(7.5% + 7px);visibility:hidden;opacity:0;" onclick="openAboutBlankWindow(window.currentVersion)"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-            <button class="mc-btn" id="reload-btn" style="right:101px;bottom:calc(7.5% + 7px);visibility:hidden;opacity:0;" onclick="window.gameFrame.contentWindow.location.reload()"><i class="fa-solid fa-rotate"></i></button>
-            <iframe src="about:blank" class="game-frame-load"></iframe>
-            <iframe class="game-frame" onload="this.contentWindow.focus();" src="/blank.html" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-orientation-lock allow-pointer-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation allow-top-navigation-by-user-activation" scrolling="no" allow="clipboard-read; clipboard-write"></iframe>
-        </main>
-        <div class="version-chooser inactive">
-            <div class="version-dropdown">
-                <button style="float:left;" class="version-btn">Select Version</button>
-                <div class="version-content">
-                    <a class="vanilla" onclick="changeVersion('1.8.8')">1.8.8</a>
-                    <a class="modded" onclick="changeVersion('1.8.8-forge')">1.8.8-forge</a>
-                    <a class="modded" onclick="changeVersion('optifine')">Shadow Client</a>
-                    <a class="modded" onclick="changeVersion('resent')">Resent Client</a>
-                    <a class="hacked" onclick="changeVersion('dragonx-client')">DragonX Client</a>
-                    <a class="vanilla" onclick="changeVersion('1.5.2')">1.5.2</a>
-                    <a class="hacked" onclick="changeVersion('Ayuncraft')">Ayuncraft</a>
-                    <a class="vanilla" onclick="changeVersion('beta-1.7.3')">Beta 1.7.3</a>
-                    <a class="vanilla" onclick="changeVersion('beta-1.3')">Beta 1.3</a>
-                    <a class="vanilla" onclick="changeVersion('alpha-1.2.6')">Alpha 1.2.6</a>
-                    <a class="vanilla" onclick="changeVersion('Classic')">Classic</a>
-                    <a class="vanilla" onclick="changeVersion('Indev')">Indev</a>
-                    <a class="vanilla" onclick="changeVersion('Paper')">Paper</a>
-                </div>
-            </div>
-            <a class="play-btn" onclick="playGame()">PLAY</a>
-            <div class="dev-info">
-                <span>WebMC Launcher v${appVersion} by Colbster937</span>
-            </div>
-        </div>
+    <div class="container">
+        <h1>This Page Has Moved</h1>
+        <p>The page you are looking for has been moved to a new location. Please update your bookmarks.</p>
+        <p>Click the link below to go to the new page:</p>
+        <p><a href="https://webmc.xyz">Go to the New Page</a></p>
     </div>
-    <script src="/script.js"></script>
-    <script src="/cloak.js"></script>
 </body>
 </html>
